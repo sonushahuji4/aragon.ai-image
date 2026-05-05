@@ -52,3 +52,6 @@ build/
 # SQLite/Local DB files (If used for local testing)
 *.db
 *.sqlite
+
+.package-lock.json
+*.package-lock.json

@@ -1,12 +1,12 @@
 const express = require('express');
 const cors = require('cors');
-const http = require('http');                     
+const http = require('http');
 const sequelize = require('./config/database');
 const imageRoutes = require('./routes/imageRoutes');
-const socketService = require('./services/SocketService'); 
+const socketService = require('./services/SocketService');
 
 const app = express();
-const server = http.createServer(app);           
+const server = http.createServer(app);
 
 // Middleware
 app.use(cors());
@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/images', imageRoutes);
 
 // Socket.io
-socketService.init(server);                      /
+socketService.init(server);
 
 // Database Sync and Server Start
 const PORT = process.env.PORT || 5000;
@@ -27,7 +27,7 @@ async function startServer() {
     await sequelize.authenticate();
     console.log('PostgreSQL Connected...');
     await sequelize.sync({ alter: true });
-    server.listen(PORT, () => {                   
+    server.listen(PORT, () => {
       console.log(`Server running on http://localhost:${PORT}`);
     });
   } catch (error) {

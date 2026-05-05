@@ -20,17 +20,17 @@ class ImageRepository {
     );
   }
 
-  async markAsAccepted(id, finalUrl, pHash) {
+  async markAsAccepted(id, finalKey, pHash) {
     return await Image.update(
-      { 
-        status: 'ACCEPTED', 
-        finalS3Key: finalUrl, 
+      {
+        status: 'ACCEPTED',
+        finalS3Key: finalKey,
         pHash,
-        rejectionReason: null 
+        rejectionReason: null
       },
       { where: { id } }
     );
   }
 }
 
-module.exports = new ImageRepository();
+module.exports = ImageRepository;

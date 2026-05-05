@@ -15,6 +15,7 @@
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1042.0",
     "@aws-sdk/s3-request-presigner": "^3.1042.0",
+    "@tensorflow/tfjs-node": "^4.22.0",
     "@vladmandic/face-api": "^1.7.15",
     "blockhash-core": "^0.1.0",
     "bullmq": "^5.76.5",
